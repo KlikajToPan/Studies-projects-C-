@@ -1,28 +1,28 @@
 #include <iostream>
-#include <string>
+#include <locale>
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
 
-int a, b, c, wynik;
+int n, los; 
+int a; 
+int b; 
 int main()
 {
-  std::cout << "Program sprawdzający poprawność iloczynu liczb całkowitych\n";
-  std::cout << "Podaj liczbę całkowitą a: ";
-  std::cin >> a;
-  std::cout << "Podaj liczbę całkowitą b: ";
-  std::cin >> b;
-  std::cout << "Podaj wynik mnożenia liczby a i b: ";
-  std::cin >> wynik;
+  cout <<"Program losuje liczbę z podanego przedziału\n";
+  cout <<" Podaj pierwszą liczbę: \n";
+  cin >> a;
+  cout << "Podaj drugą liczbę: \n";
+  cin >> b; 
+  cout << "Podaj ile liczb mam wylosować?: \n";
+  cin >> n;
+  srand(time(NULL)); //inicjalizacja generatora liczb pseudolosowych
+ for(int i=1;i<=n;i++)
+ {
+  los=a+rand()%(b-a+1); //przypisanie zmiennej los wartości pseudolosowej
+  cout<<los<<"  ";
+ } 
+ return 0;   
 
-  if (a * b == wynik)
-  {
-    std::cout << "Podałeś poprawny wynik";
-    return 0;
-  }
-
-  if (a * b != wynik)
-  {
-    std::cout << "Podałeś niepoprawny wynik\n";
-    std::cout << "Poprawny wynik to:" << a * b;
-    return 0;
-  }
 }
